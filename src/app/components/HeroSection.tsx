@@ -6,6 +6,7 @@ import { Query } from "node-appwrite";
 import slugify from "@/utils/slugify";
 import { storage } from "@/models/client/config";
 import HeroSectionHeader from "./HeroSectionHeader";
+import  {IconCloud}  from "@/components/magicui/icon-cloud";
 
 export default async function HeroSection() {
     const questions = await databases.listDocuments(db, questionCollection, [
