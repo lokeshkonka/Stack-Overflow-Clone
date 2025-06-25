@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import {IndexType, Permission} from "node-appwrite"
 
 import {db, questionCollection} from "../name"

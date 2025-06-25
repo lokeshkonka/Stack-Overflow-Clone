@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import { cn } from "@/lib/utils";
 
 import { AnimatedList } from "@/components/magicui/animated-list";

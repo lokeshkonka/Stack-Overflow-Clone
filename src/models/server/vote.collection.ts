@@ -1,3 +1,4 @@
+export const runtime = "nodejs";
 import { Permission } from "node-appwrite";
 import { db, voteCollection } from "../name";
 import { databases } from "./config";
