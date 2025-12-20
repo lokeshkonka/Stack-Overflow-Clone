@@ -20,7 +20,7 @@
     "immer": "^10.1.1",
     "lucide-react": "^0.396.0",
     "mini-svg-data-uri": "^1.4.4",
-    "next": "14.2.4",
+    "next": "14.2.35",
     "node-appwrite": "^13.0.0",
     "react": "^18",
     "react-dom": "^18",
