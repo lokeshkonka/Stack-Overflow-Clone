@@ -22,5 +22,5 @@ declare module 'react-icon-cloud' {
     bgHex: string,
     size: number,
     style: React.CSSProperties
-  ) => JSX.Element;
+  ) => React.JSX.Element;
 }

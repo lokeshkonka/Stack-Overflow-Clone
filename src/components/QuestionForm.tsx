@@ -40,7 +40,7 @@ const LabelInputContainer = ({
  * ![INFO]: for buttons, refer to https://ui.aceternity.com/components/tailwindcss-buttons
  * ******************************************************************************
  */
-const QuestionForm = ({ question }: { question?: Models.Document }) => {
+const QuestionForm = ({ question }: { question?: any }) => {
     const { user } = useAuthStore();
     const [tag, setTag] = React.useState("");
     const router = useRouter();

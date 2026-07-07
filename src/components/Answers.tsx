@@ -16,7 +16,7 @@ const Answers = ({
     answers: _answers,
     questionId,
 }: {
-    answers: Models.DocumentList<Models.Document>;
+    answers: Models.DocumentList<any>;
     questionId: string;
 }) => {
     const [answers, setAnswers] = React.useState(_answers);
@@ -108,7 +108,7 @@ const Answers = ({
                         <div className="mt-4 flex items-center justify-end gap-1">
                             <picture>
                                 <img
-                                    src={avatars.getInitials(answer.author.name, 36, 36).href}
+                                    src={avatars.getInitials(answer.author.name, 36, 36).toString()}
                                     alt={answer.author.name}
                                     className="rounded-lg"
                                 />
