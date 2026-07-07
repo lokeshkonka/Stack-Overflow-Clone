@@ -1,5 +1,5 @@
 export const runtime = "nodejs";
-import { IndexType, Permission } from "node-appwrite";
+import { Permission } from "node-appwrite";
 import { answerCollection, db } from "../name";
 import { databases } from "./config";
 

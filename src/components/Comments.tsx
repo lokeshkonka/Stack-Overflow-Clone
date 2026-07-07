@@ -17,7 +17,7 @@ const Comments = ({
     typeId,
     className,
 }: {
-    comments: Models.DocumentList<Models.Document>;
+    comments: Models.DocumentList<any>;
     type: "question" | "answer";
     typeId: string;
     className?: string;
