@@ -10,19 +10,28 @@ import HeroSectionHeader from "./HeroSectionHeader";
 import  {IconCloud}  from "@/components/magicui/icon-cloud";
 
 export default async function HeroSection() {
-    const questions = await databases.listDocuments(db, questionCollection, [
-        Query.orderDesc("$createdAt"),
-        Query.limit(15),
-    ]);
+    try {
+        const questions = await databases.listDocuments(db, questionCollection, [
+            Query.orderDesc("$createdAt"),
+            Query.limit(15),
+        ]);
 
-    return (
-        <HeroParallax
-            header={<HeroSectionHeader />}
-            products={questions.documents.map(q => ({
-                title: q.title,
-                link: `/questions/${q.$id}/${slugify(q.title)}`,
-                thumbnail: storage.getFilePreview(questionAttachmentBucket, (q as any).attachmentId).toString(),
-            }))}
-        />
-    );
+        return (
+            <HeroParallax
+                header={<HeroSectionHeader />}
+                products={questions.documents.map(q => ({
+                    title: q.title,
+                    link: `/questions/${q.$id}/${slugify(q.title)}`,
+                    thumbnail: storage.getFilePreview(questionAttachmentBucket, (q as any).attachmentId).toString(),
+                }))}
+            />
+        );
+    } catch (error) {
+        console.error("Failed to load hero section products:", error);
+        return (
+            <div className="bg-black pt-20">
+                <HeroSectionHeader />
+            </div>
+        );
+    }
 }

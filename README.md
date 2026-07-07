@@ -27,7 +27,7 @@ A full-stack Stack Overflow clone built with modern web technologies, showcasing
 ### 2. Configuration
 Create a `.env.local` file in the root directory:
 ```env
-NEXT_PUBLIC_APPWRITE_ENDPOINT=your_appwrite_endpoint
+NEXT_PUBLIC_APPWRITE_HOST_URL=your_appwrite_endpoint
 NEXT_PUBLIC_APPWRITE_PROJECT_ID=your_project_id
 APPWRITE_API_KEY=your_api_key
 ```

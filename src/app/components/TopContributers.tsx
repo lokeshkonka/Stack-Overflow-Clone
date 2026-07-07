@@ -49,15 +49,24 @@ const Notification = ({ user }: { user: Models.User<UserPrefs> }) => {
 };
 
 export default async function TopContributers() {
-    const topUsers = await users.list<UserPrefs>([Query.limit(10)]);
+    try {
+        const topUsers = await users.list<UserPrefs>([Query.limit(10)]);
 
-    return (
-        <div className="bg-background relative flex max-h-[400px] min-h-[400px] w-full max-w-[32rem] flex-col overflow-hidden rounded-lg bg-white/10 p-6 shadow-lg">
-            <AnimatedList>
-                {topUsers.users.map(user => (
-                    <Notification user={user} key={user.$id} />
-                ))}
-            </AnimatedList>
-        </div>
-    );
+        return (
+            <div className="bg-background relative flex max-h-[400px] min-h-[400px] w-full max-w-[32rem] flex-col overflow-hidden rounded-lg bg-white/10 p-6 shadow-lg">
+                <AnimatedList>
+                    {topUsers.users.map(user => (
+                        <Notification user={user} key={user.$id} />
+                    ))}
+                </AnimatedList>
+            </div>
+        );
+    } catch (error) {
+        console.error("Failed to load top contributors:", error);
+        return (
+            <div className="relative flex max-h-[400px] min-h-[400px] w-full max-w-[32rem] flex-col items-center justify-center rounded-lg bg-white/5 border border-white/10 p-6 shadow-lg text-center">
+                <p className="text-gray-400 font-medium">Unable to load contributors. Backend service may be offline.</p>
+            </div>
+        );
+    }
 }
